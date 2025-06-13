@@ -1,3 +1,3 @@
-module example.com/hello
+module example.com/learngo
 
 go 1.23.4
