@@ -6,13 +6,23 @@ import (
 )
 
 func TestRepeat(t *testing.T) {
-	repeated := Repeat("a", 3)
-	expected := "aaa"
+	t.Run("Repeats the String N times", func(t *testing.T) {
+		repeated := Repeat("a", 3)
+		expected := "aaa"
 
-	if repeated != expected {
-		t.Errorf("expected %q but got %q", expected, repeated)
-	}
- }
+		if repeated != expected {
+			t.Errorf("expected %q but got %q", expected, repeated)
+		}
+	})
+	t.Run("Repeats the String N times using built in String.Repeat", func(t *testing.T) {
+		repeated := StringRepeat("a", 3)
+		expected := "aaa"
+
+		if repeated != expected {
+			t.Errorf("expected %q but got %q", expected, repeated)
+		}
+	})
+}
 
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
@@ -22,6 +32,6 @@ func BenchmarkRepeat(b *testing.B) {
 
 func ExampleRepeat() {
 	repeat := Repeat("h", 5)
-    fmt.Println(repeat)
+	fmt.Println(repeat)
 	// Output: hhhhh
 }

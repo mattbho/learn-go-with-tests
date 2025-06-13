@@ -10,3 +10,7 @@ func Repeat(character string, repeatCount int) string {
 	}
 	return repeated.String()
 }
+
+func StringRepeat(character string, repeatCount int) string {
+	return strings.Repeat(character, repeatCount)
+}
