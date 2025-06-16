@@ -60,5 +60,6 @@ func (d Dictionary) Delete(word string) error {
 	default:
 		return err
 	}
+
 	return nil
 }
