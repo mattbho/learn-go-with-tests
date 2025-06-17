@@ -1,16 +1,16 @@
 package dictionary
 
-const (
-	ErrNotFound         = DictionaryErr("could not find the word you are looking for")
-	ErrWordExists       = DictionaryErr("cannot add word because it already exists")
-	ErrWordDoesNotExist = DictionaryErr("cannot perform operation on word because it does not exist")
-)
-
 type DictionaryErr string
 
 func (e DictionaryErr) Error() string {
 	return string(e)
 }
+
+const (
+	ErrNotFound         = DictionaryErr("could not find the word you are looking for")
+	ErrWordExists       = DictionaryErr("cannot add word because it already exists")
+	ErrWordDoesNotExist = DictionaryErr("cannot perform operation on word because it does not exist")
+)
 
 type Dictionary map[string]string
 
